@@ -19,11 +19,15 @@ class Router
 
     public static function enable(): void
     {
+        $query = '';
         //Передача строки в переменную. Строка идет после "domain/" из $_GET массива
-        if (isset($_GET['q']) && $_GET['q'] == NULL) {
+        if (isset($_GET['q']) && $_GET['q'] == NULL)
+        {
             $query = 'home';
         }
-        else $query = $_GET['q'];
+        else if (isset($_GET['q']))
+            $query = $_GET['q'];
+
         //Перебор массива list для поиска совпадений наименования страницы
         foreach (self::$list as $item) {
             if ($item["uri"] === '/' . $query) {
