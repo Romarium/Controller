@@ -2,6 +2,7 @@
 
 namespace app\services;
 
+//Класс для загрузки компонентов страницы
 class Page
 {
     public static function component($component_name): void
